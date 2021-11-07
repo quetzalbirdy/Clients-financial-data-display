@@ -1,0 +1,265 @@
+/* Orden de compra */
+.fondo-app {
+
+    &.orden-compra {
+
+        .contenido-ventana {
+            overflow: auto;
+
+            @include desktop {
+                display: flex;
+                flex-direction: column;
+                height: calc(100vh - 60px);
+            }
+
+            .MuiAccordionSummary-content {
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .MuiAccordion-root {
+                border-bottom: 1px solid #DFE0EB;
+                margin: 0 10px;
+
+                svg {
+                    transition: all;
+                }
+
+                &:first-child {
+                    margin-top: 10px;
+                }
+
+                .MuiAccordionDetails-root {
+                    padding: 0;
+                }
+
+                .MuiCollapse-container {
+
+                    .panel-contenido {
+                        width: 100%;
+
+                        @include desktop {
+                            width: 100%;
+                        }
+                    }
+                }
+
+                .tabla-basica {
+                    border-top: none;
+                    border-radius: 0;
+
+                    .MuiButton-text {
+                        padding: 0;
+                    }
+
+                    tbody {
+                        tr {
+                            th {
+                                p {
+                                    font-size: 12px;
+                                }
+
+                                &.MuiTableCell-root {
+                                    padding: 0 5px;
+                                }
+
+                                &:nth-child(1) {
+                                    padding-left: 15px;
+                                }
+                            }
+
+                            td {
+                                &.MuiTableCell-root {
+                                    line-height: 1;
+                                }
+
+                                p {
+                                    font-size: 12px;
+                                }
+                            }
+                        }
+                    }
+
+                    .MuiTableRow-root:nth-child(2n+1) {
+                        background: none;
+                    }
+
+                    tr.MuiTableRow-root {
+                        border-top: 1px solid #DFE0EB;
+                        border-bottom: 1px solid #DFE0EB;
+
+                        th,
+                        td {
+
+                            &:nth-child(1) {
+                                padding-left: 5px;
+                            }
+                        }
+                    }
+
+                    .MuiTable-stickyHeader {
+                        border-collapse: collapse;
+                    }
+                }
+            }
+
+            >.tabla-basica {
+                border-bottom: $amarillo solid 1px;
+                margin-bottom: 15px;
+                border-radius: 0;
+                padding: 0;
+            }
+        }
+
+        .tabla-basica {
+            height: auto;
+
+            tr {
+                th {
+                    p {
+                        font-size: 14px;
+
+                        &:nth-child(2) {
+                            font-size: 10px;
+                        }
+                    }
+                }
+
+                td {
+                    p {
+                        font-size: 14px;
+
+                        &:nth-child(2) {
+                            font-size: 11px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .medio-pago {
+            padding: 10px;
+            border-bottom: 3px solid rgba(108, 123, 138, 0.093);
+
+            p:nth-child(1) {
+                font-size: 14px;
+            }
+
+            p:nth-child(2) {
+                font-size: 11px;
+            }
+        }
+
+        @include desktop {
+
+            .titulo-tabla {
+                height: auto;
+            }
+
+            .cajas {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: repeat(2, 1fr);
+                grid-gap: 25px;
+                overflow: hidden;
+                height: calc(100vh - 150px);
+
+                .caja {
+                    width: 100%;
+                    margin: 0 0 0;
+                    height: 100%;
+                    box-shadow: -1px -1px 20px #efefef;
+                    display: flex;
+                    flex-direction: column;
+                    border-radius: 5px;
+
+                    &:nth-child(4) {
+                        grid-column: 2/3;
+                    }
+
+                    .head {
+                        @include flex;
+                        border-bottom: #43425D solid 1px;
+
+                        h1 {
+                            font-size: 12px;
+                            padding: 10px;
+                            line-height: 120%;
+
+                        }
+
+                        .numero {
+                            background: #43425D;
+                            color: #FFF;
+                            font-weight: bold;
+                            font-size: 12px;
+                            padding: 10px 25px;
+                            margin: 0 15px 0 auto;
+                            border-radius: 4px 4px 0 0;
+                        }
+                    }
+
+                    .tabla {
+                        height: 100%;
+
+                        .tabla-basica {
+                            margin: 0;
+                            padding: 0;
+                            height: 100%;
+                            max-height: 250px;
+                            overflow: auto;
+                            border-radius: 0;
+
+                            table {
+
+                                thead {
+
+                                    th {
+                                        padding: 5px;
+                                        height: 30px;
+                                        font-size: 11px;
+                                        color: #999;
+                                    }
+                                }
+
+                                tbody {
+
+                                    th,
+                                    td {
+                                        height: auto;
+                                        padding: 5px;
+
+                                        &:first-child {
+                                            padding: 5px;
+                                        }
+                                    }
+                                }
+                            }
+
+                            th,
+                            td {
+                                font-size: 12px;
+
+                                p {
+                                    font-size: 12px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.modal-detalle-ordenes-compra.modal-basico {
+    .modal__contenido {
+        justify-content: flex-start;
+
+        .tabla-basica {
+            &:nth-child(1) {
+                min-height: 64px;
+            }
+        }
+    }
+}

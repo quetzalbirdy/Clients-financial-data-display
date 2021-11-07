@@ -1,0 +1,334 @@
+.home {
+  height: 100vh;
+  box-sizing: border-box;
+  padding: 0 10px 10px;
+}
+
+.grid {
+  height: 100%;
+  display: grid;
+  grid-template-rows: 50px 70% auto 50px;
+  overflow: hidden;
+
+  .app-bar{
+    padding:0;
+    border: 0;
+  }
+
+  .cards {
+    display: flex;
+    width: 100%;
+    // diseño de solo dos tarjetas
+    max-width: 1440px;
+    margin:0 auto;
+    border:red solid 1px;
+
+
+    .card {
+      width: 100%;
+      border: 0;
+      margin: 0 10px 0 0;
+      
+      /* box shadow */
+
+      filter: drop-shadow(0px 6px 18px rgba(0, 0, 0, 0.06));
+      border-radius: 4px;
+
+      &:last-child {
+        margin: 0;
+      }
+
+      &.compras {
+        background: linear-gradient(187.04deg, #819fed 39.12%, rgba(129, 159, 237, 0) 143.31%);
+      }
+
+      &.hes {
+        background: linear-gradient(186.31deg, #b198e8 60.06%, rgba(177, 152, 232, 0) 135.68%);
+      }
+
+      &.facturas {
+        background: linear-gradient(186.38deg, #ffb979 51.05%, rgba(255, 185, 121, 0) 156.86%);
+      }
+
+      &.relacion {
+        background: linear-gradient(185.68deg, #f08282 46.3%, rgba(240, 130, 130, 0) 170.09%);
+      }
+
+      .indicador {
+        margin: 3px;
+        border-radius: 4px 4px 0 0;
+        overflow: hidden;
+
+        display: flex;
+
+        > div {
+          @include flex;
+          flex-direction: column;
+          width: 50%;
+          min-height: 100px;
+
+          div {
+            text-align: center;
+            width: 100%;
+          }
+        }
+
+        .l {
+          background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .r {
+          background-color: rgba(255, 255, 255, 0.4);
+
+          .text{
+            padding:20px 15px 0;
+          }
+        }
+
+        .text {
+          font-family: "Montserrat", sans-serif;
+          font-weight: 600;
+          font-size: 10px;
+          color: #6c7b8a;
+          letter-spacing: 1px;
+          padding: 20px 0 0;
+          line-height: 100%;
+          text-transform: uppercase;
+        }
+
+        .number {
+          font-family: "Mulish", sans-serif;
+          font-size: 18px;
+          color: #fff;
+          padding: 0 0 10px;
+        }
+      }
+
+      .titulo {
+        font-family: montserrat;
+        color: #fff;
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        text-align: center;
+        margin: 20px 5px;
+        border-bottom: 1px solid #eaf0f4;
+        padding: 0 0 20px;
+        @include flex;
+        flex-direction: row;
+
+        svg {
+          margin: 0 5px 0 0;
+        }
+      }
+
+      .menu {
+        font-family: Ubuntu;
+        font-weight: bold;
+
+        ul {
+          list-style: none;
+          margin: 0;
+          padding: 0 10px;
+
+          li {
+            text-align: center;
+            color: #fff;
+            line-height: 160%;
+
+            > button,
+            a {
+              color: #fff;
+              text-decoration: none;
+              letter-spacing: 1px;
+              text-transform: uppercase;
+              background-color: transparent;
+              cursor: pointer;
+              font-size: 12px;
+              letter-spacing: 1px;
+
+              @include transition;
+
+              &:hover{
+                opacity: 0.5;
+              }
+
+              .btn{
+                background-color: #FFFFFF;
+                color:#333;
+              }
+            }
+
+            .btn {
+              width: 100%;
+              margin: 15px 0 0;
+              min-height: 40px;
+            }
+          }
+        }
+      }
+
+      .grafico {
+        margin: auto 0 0;
+        @include flex;
+        padding: 15px;
+
+        svg {
+          width: auto !important;
+          max-width: 100% !important;
+        }
+      }
+    }
+  }
+
+  .content-banner {
+    border-radius: 3px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    max-width: 1440px;
+    margin:10px auto;
+    width: 100%;
+
+    .banner {
+      width: 100%;
+      background: linear-gradient(347.54deg, #e3daf1 -27.59%, #cee8f8 106.93%);
+      border-radius: 5px;
+      @include flex;
+    }
+  }
+
+  footer {
+    border-radius: 3px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    max-width: 1440px;
+    margin:0 auto;
+    width: 100%;
+  }
+}
+
+.app-bar{
+  padding:0 15px;
+
+  button.burger{
+    display: none;
+  }
+
+  .app-bar__texto-logo{
+    width: 100%;
+    flex-direction: row-reverse;
+  }
+}
+
+.boton-accion-centro{
+
+  .MuiButton-root{
+    border-radius: 3px;
+    font-size: 10px;
+    letter-spacing: 1px;
+  }
+}
+
+.fondo-app{
+
+  &.con-bottom-bar{
+
+    .contenido-ventana{
+      padding:0 15px;
+
+      .titulo-tabla{
+        margin:0 -15px;
+
+        button{
+          margin:0;
+
+          svg{
+            font-size: 14px!important;
+          }
+        }
+      }
+
+      .tabla-basica{
+        padding:0 15px 20px 15px;
+        border:0;
+      }
+    }
+  
+    .bottom-bar{
+      display: none;
+    }
+  
+    // tabla lista
+    .MuiTableContainer-root{
+  
+      .MuiTableHead-root{
+  
+        th{
+          color:#000000;
+          font-size: 14px;
+          font-weight: bold;
+          padding:15px 0;
+        }
+      }
+  
+      .MuiTableBody-root{
+  
+        tr{
+  
+          td{
+            
+  
+            &:last-child{
+              
+              div{
+                
+              }
+  
+              button{
+                margin: 0 0 0 auto;
+                height:20px;
+              }
+            }
+          }
+        }
+  
+        .MuiTableRow-root{
+
+          th,td{
+            border-top:1px solid rgba(224, 224, 224, 0.5);
+          }
+  
+          &:nth-child(2n+1) {
+            
+            th,
+            td{
+              background-color: #fff;
+            }
+          }
+        }
+      }
+  
+      &.tabla-basica{
+        overflow: auto;
+      }
+    }
+  }
+
+  &.compra{
+
+    .titulo-tabla {
+      border-top: #82A0ED solid 10px;
+      padding: 0 30px;
+    }
+  }
+
+  &.factura{
+
+    .titulo-tabla {
+      border-top: #FFB979 solid 10px;
+      padding: 0 30px;
+    }
+  }
+}

@@ -1,0 +1,153 @@
+.fondo-app.con-bottom-bar {
+
+    &.cuenta-corriente{
+
+        .MuiTableContainer-root {
+
+            thead,
+            tbody {
+
+                tr {
+
+                    th,
+                    td {
+                        // display: none;
+
+                        // &:nth-child(1),
+                        // &:nth-child(3),
+                        // &:nth-child(7),
+                        // &:nth-child(9),
+                        // &:last-child {
+                        //     display: table-cell;
+                        // }
+                    }
+                }
+            }
+        }
+
+        .valor-total{
+
+            div{
+                @include flex;
+
+                .valor-total__valor{
+                    margin:0  0 0 10px;
+                }
+            }
+        }
+
+        @include desktop {
+
+            .contenido-ventana {
+                display: grid;
+                grid-template-columns: 100%;
+                grid-template-columns: repeat(4, 1fr);
+                grid-template-rows: 50px 80px auto 80px;
+
+                &:after{
+                    background-color: $barraColor;
+                    content: "";
+                    z-index: -1;
+                    grid-column: 1/5;
+                    grid-row: 3/4;
+                    border-radius: 5px;
+                }
+
+                .titulo-tabla {
+                    grid-column: 1/5;
+                    grid-row: 1/2;
+                }
+
+                .select-basico {
+                    grid-column: 1/5;
+                    grid-row: 2/3;
+                    background-color: #EAF7FF;
+                    padding:10px;
+                    flex-direction: row;
+                    justify-content: flex-start;
+                    position: relative;
+                    margin-left: 110px;
+
+                    &::before{
+                        content: "";
+                        width: 100px;
+                        height: 100%;
+                        background-color: #EAF0F4;
+                        margin:-10px 0 -10px -10px;
+                        position: absolute;
+                        left:-95px;
+                    }
+
+                    p{
+                        margin:0 15px;
+                        font-size: 10px;
+                        letter-spacing: 1px;
+                    }
+
+                    .MuiInputBase-root{
+                        max-width: 200px;
+                        margin:0;
+                    }
+                }
+
+                .tabla-basica {
+                    grid-column: 1/5;
+                    grid-row: 3/4;
+
+                    thead,
+                    tbody {
+
+                        tr {
+
+                            th,
+                            td {
+                                display: table-cell;
+                                height: 50px;
+                                font-size: 12px;
+
+                                &:nth-child(1) {
+                                    
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .valor-total{
+                    
+                    grid-column: 1/5;
+                    grid-row: 4/5;
+                    height: 100%;
+                    border:0;
+                    flex-direction: row;
+                    background-color: #eaf7ff;
+                    border-radius: 5px;
+                    padding:5px 25px;
+                    margin:0;
+                    justify-content: flex-start;
+
+                    div{
+                        padding:0 25px;
+                    }
+
+                    > p{
+                       font-weight: bold; 
+                    }
+
+                    .valor-total__valor{
+                        background-color: #feb969;
+                        min-width: 100px;
+                        font-size: 18px;
+                        font-weight: bold;
+                    }
+                }
+
+                .loading{
+                    grid-column: 1/5;
+                    grid-row: 1/5;
+                    border: lime dashed 5px;
+                }
+            }
+        }
+    }
+}

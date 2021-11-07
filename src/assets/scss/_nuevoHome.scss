@@ -1,0 +1,535 @@
+.nuevoHome{
+    height: 100vh;
+
+    button.btn{
+        background: none;
+        background-color: #666;
+        padding:10px;
+        color:#FFF;
+        border-radius: 5px;
+        width: 100%;
+        min-width: 100%;
+        @include transition;
+
+        .btn{
+            min-width: 100%;
+        }
+
+        &:hover{
+            cursor: pointer;
+            opacity: 0.7;
+        }
+    }
+
+    .grid{
+        grid-template-rows: 50px auto auto 100px;
+        height: auto;
+    }
+
+    // barra busqueda
+    .contenido-ventana{
+    
+        @include desktop{
+            grid-row: 2/3;
+            height: auto;
+            max-width: 1280px;
+            margin:0 auto;
+            width: 100%;
+        }
+
+        .barra-busqueda{
+            margin:10px;
+
+            @include desktop{
+                max-width: 300px;
+                margin:0 0 0 auto;
+            }
+
+            .boton-busqueda{
+                background: none;
+                background-color: $rojo;
+            }
+
+            .select-busqueda{
+                @include desktop{
+                    width:120px;
+                }
+            }
+        }
+
+        .info{
+            padding:5px;
+
+            .boton-accion-centro{
+                width: 50%;
+                
+                button{
+                    height:40px;
+                    
+                    span{
+                        font-weight: 700;
+                        letter-spacing: 2px;
+                    }
+                }
+            }
+
+            .info__elem{
+                background: none;
+                background-color: $rojo;
+            }
+        }
+    }
+
+    .app-bar{
+        max-width: 1280px;
+        width: 100%;
+        margin:0 auto;
+    }
+
+    .paneles{
+        display: flex;
+        flex-direction: column;
+
+        @include mobile{
+            margin:0;
+            overflow: hidden;
+        }
+
+        .panel{
+            background-color: #F5F5F5;
+            @include flex;
+            margin-top:2rem;
+            margin-bottom:2rem;
+            height:auto;
+
+            @include mobile{
+                margin:0;
+            }
+    
+            .container{
+                max-width: 1280px;
+                margin:0 auto;
+                width: 100%;
+                display: grid;
+                grid-template-columns: 300px auto auto 150px;
+                padding: 0 15px;
+
+                @include mobile{
+                    grid-template-columns: 1fr 1fr;
+                    padding:0;
+                    position: relative;
+
+                    .box{
+                        @include flex;
+                        flex-direction: column;
+                        overflow: hidden;
+                        position: relative;
+
+                        .icon{
+                            border-radius: 50%;
+                            height:100px;
+                            width: 100px;
+                            display: flex;
+                            align-items: flex-end;
+                            justify-content: flex-end;
+                            position: absolute;
+
+                            svg{
+                                position: relative;
+                                top: -18px;
+                                left: -26px;
+                            }
+
+                            path{
+
+                                fill: #6E91EC;
+                            }
+                        }
+                    }
+                }
+    
+                .indicador{
+                    background-color: #EFEFEF;
+                    padding: 0 25px;
+                    border-radius: 10px;
+                    margin:-15px 0;
+                    position: relative;
+                    overflow: hidden;
+                    display: flex;
+                    justify-content: center;
+                    align-items: flex-start;
+                    flex-direction: column;
+                    
+                    .text{
+                        font-family: "Montserrat", sans-serif;
+                        font-weight: 600;
+                        font-size: 10px;
+                        color: #6c7b8a;
+                        letter-spacing: 1px;
+                        padding: 20px 0 0;
+                        line-height: 100%;
+                        text-transform: uppercase;
+                    }
+    
+                    .number {
+                        font-family: "Mulish", sans-serif;
+                        font-size: 18px;
+                        font-weight: bold;
+                        color: #333;
+                        padding: 0 0 10px;
+                    }
+    
+                    img{
+                        position: absolute;
+                        bottom: -60px;
+                        right: -50px;
+                        height: 150px;
+                    }
+                }
+    
+                .title{
+                    @include flex;
+                    padding:0 50px;
+                    font-weight: 700;
+                    letter-spacing: 1px;
+
+                    @include desktop{
+                        max-width: 200px;  
+                        margin: 0 auto;
+                    }
+
+                    @include mobile{
+                        font-size: 20px;
+                        line-height: 120%;
+                    }
+                }
+    
+                .menu{
+                    @include flex;
+                    width: 100%;
+    
+                    ul{
+                        list-style: none;
+                        margin:25px 0;
+
+                        @include mobile{
+                            margin:15px 0;
+                            width: 100%;
+                        }
+    
+                        li{
+                            line-height: 240%;
+    
+                            button{
+                                background-color: transparent;
+                                color: #333;
+                                border-radius: 3px;
+                                margin:0 0 5px;
+                                text-transform: uppercase;
+                                font-size: 12px;
+                                font-weight: 700;
+                                letter-spacing: 1px;
+                                cursor: pointer;
+                                @include transition;
+    
+                                &:hover{
+                                    opacity: 0.7;
+                                }
+                            }
+    
+                            &:last-child{
+    
+                                button{
+                                    margin:0;
+                                }
+                            }
+
+                            @include mobile{
+                                margin: 2px 0;
+                                border-radius: 5px 0 0 5px;
+                                padding:0 0 0 15px;
+
+                                button{
+                                    margin: 0;
+                                    font-size: 11px;
+                                    letter-spacing: 0.5px;
+                                }
+                            }
+                        }
+                    }
+                }
+    
+                .imagen{
+                    margin: 0 0 0 auto;
+                    @include flex;
+
+                    img{
+                        width: 100%;
+                    }
+                }
+            }
+    
+            &.compra{
+
+                .menu{
+
+                    @include desktop{
+                        border-left:#E8E8E8 solid 1px;
+                    }
+                }
+                
+                @include mobile{
+                    margin-bottom: 25px;
+
+                    .imagen{
+                        position: absolute;
+                        bottom: -10px;
+                        width: 130px;
+                        left: -23px;
+                    }
+
+                    .menu{
+
+                        ul{
+
+                            li{
+
+                                &:nth-child(1){
+                                    background-color: #DCE5FC;
+                                }
+
+                                &:nth-child(2){
+                                    background-color: #CEDCFF;
+                                }
+
+                                &:nth-child(3){
+                                    background-color: #B9CDFF;
+                                }
+
+                                &:nth-child(4){
+                                    background-color: #A1BCFF;
+                                }
+                            }
+                        }
+                    }
+
+                    .box{
+
+                        .icon{
+                            background-color: #A5BEFF;
+                            top: -45px;
+                            left: -40px;
+                        }
+
+                        path{
+
+                            fill: #6E91EC;
+                        }
+                    }
+                }
+            }
+    
+            &.facturas{
+                margin-bottom:4rem;
+
+                @include mobile{
+                    margin-bottom: 25px;
+
+                    .box{
+
+                        .icon{
+                            background-color: #FFC690;
+                            top: -45px;
+                            right: -40px;
+                        }
+
+                        path{
+
+                            fill: #E4964D;
+                        }
+                    }
+                }
+    
+                .container{
+                    grid-template-columns: 300px auto auto 300px;
+
+                    @include mobile{
+                        grid-template-columns: 1fr 1fr;
+                        padding:0;
+                        position: relative;
+                    }
+    
+                    .indicador{
+                        grid-column: 4/5;
+                        grid-row: 1/2;
+    
+                        img{
+                            position: absolute;
+                            top: -80px;
+                            right: -15px;
+                            height: 150px;
+                        }
+                    }
+    
+                    .title{
+                        grid-column: 3/4;
+                        grid-row: 1/2;
+                    }
+    
+                    .menu{
+                        grid-column: 2/3;
+                        grid-row: 1/2;
+
+                        @include desktop{
+                            border-right:#E8E8E8 solid 1px;
+                        }
+
+                        @include mobile{
+                            grid-column: 1/2;
+
+                            ul{
+
+                                li{
+                                    border-radius: 0 5px 5px 0;
+
+                                    &:nth-child(1){
+                                        background-color: #FFE8D3;
+                                    }
+
+                                    &:nth-child(2){
+                                        background-color: #FFDAB6;
+                                    }
+
+                                    &:nth-child(3){
+                                        background-color: #FFCA96;
+                                    }
+
+                                    &:nth-child(4){
+                                        background-color: #FFB874;
+                                    }
+                                }
+                            }
+                        }
+                    }
+    
+                    .imagen{
+                        grid-column: 1/2;
+                        grid-row: 1/2;
+                        flex-direction: column;
+                        position: relative;
+                        margin:0;
+
+                        @include mobile{
+                            position: absolute;
+                            bottom: 30px;
+                            width: 130px;
+                            right: -15px;
+                            left: inherit;
+                            grid-column: inherit;
+                        }
+    
+                        button{
+                            background-color: $amarillo;
+                            margin: -50px 0 0;
+                        }
+    
+                        img{
+                            position: absolute;
+                            width: 170px;
+                            bottom:-45px;
+                            left:30px;
+
+                            @include mobile{
+                                width: 90px;
+                                bottom: -65px;
+                                left: 44px;
+                            }
+                        }
+                    }
+
+                    .prontopago{
+
+                        @include mobile{
+                            width: 100%;
+                            grid-column: 1/3;
+                            margin-bottom: -20px;
+
+                            .btn{
+                                margin:0 auto;
+                                width: 50%;
+                                min-width: 55%;
+                                background-color: #FFB979;
+                                color:#FFF;
+                                font-weight: 700;
+                            }
+                        }
+                    }
+
+                    .box{
+
+                        .icon{
+
+                            svg {
+                                position: relative;
+                                top: -18px;
+                                left: -50px;
+
+                                path{
+                                    fill:#E4964D;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .footer{
+        
+        max-width: 100%;
+        max-height: 200px;
+
+        .container{
+            max-width: 1280px;
+            margin:0 auto;
+            width: 100%;
+            padding:0 15px;
+
+            display: flex;
+            flex-direction: row;
+
+            .content-banner{
+                margin:0;
+            }
+
+            .accesos{
+                background-color: #F5F5F5;
+                min-width: 315px;
+                padding-right: 15px;
+                @include flex;
+                flex-direction: column;
+                gap:10px;
+                position: relative;
+                margin:0 15px 0 0;
+
+                .btn{
+                    background-color: $rojo;
+                    z-index: 1;
+                }
+
+                &:after{
+                    content: "";
+                    background-color: #F5F5F5;
+                    width: 50vw;
+                    position: absolute;
+                    border-radius: 10px;
+                    top:0;
+                    bottom:0;
+                    right: 0;
+                    z-index: 0;
+                }
+            }
+        }
+    }
+}

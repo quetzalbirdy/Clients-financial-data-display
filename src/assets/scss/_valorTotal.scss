@@ -1,0 +1,83 @@
+/* VALOR TOTAL - en algunas tablas debajo del titulo hay un "total" */
+.valor-total {
+    height: 40px;
+    justify-content: space-between;
+    padding: 0 10px;
+    font-size: 14px;
+    text-transform: uppercase;
+    // background: linear-gradient(139.15deg, rgba(218, 187, 189, 0) -26.44%, #dae8f1 141.56%);
+    @include flex;
+    justify-content: space-between;
+    background-color: #F1F9FF;
+    z-index: 1;
+    position: relative;
+
+    .valor-total__valor {
+        background: #feb969;
+        padding: 7px 15px;
+        border-radius: 5px;
+        margin: -10px 5px;
+        height:50px;
+        @include flex;
+    }
+
+    .text{
+        font-weight: bold;
+        color: #000; 
+        font-size: 14px;
+        font-family: "Mulish", sans-serif;
+    }
+
+    .text{
+        font-weight: normal;
+    }
+}
+
+@media (min-width: $breakpoint-mobile) {
+
+    .valor-total {
+        margin: 10px 0;
+        height: auto;
+        flex-direction: column-reverse;
+        background: #FEB969;
+        padding: 15px;
+        border-radius: 2px;
+        width: 100%;
+
+        .valor-total__valor{
+            background: none;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .text {
+            text-align: center;
+            font-size: 12px;
+            text-transform: none;
+            letter-spacing: 1px;
+            font-weight: normal;
+        }
+    }
+}
+
+.modal-basico{
+
+    .valor-total{
+        flex-direction: column;
+        background-color: #EAF0F4;
+        padding: 10px 5px;
+        height:auto;
+
+        .text{
+            font-size: 12px;
+            text-transform: initial;
+            margin:0 0 5px;
+        }
+
+        .valor-total__valor{
+            background-color: transparent;
+            margin: 0;
+            padding: 0;
+        }
+    }
+}

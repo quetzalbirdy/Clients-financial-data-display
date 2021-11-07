@@ -1,0 +1,21 @@
+@mixin lime { @media (min-width: 1400px) {@content;} }
+@mixin red { @media (min-width: 1200px) and (max-width: 1399px) {@content;} }
+@mixin orange { @media (min-width: 992px) and (max-width: 1199px) {@content;} }
+@mixin green { @media (max-width: 991px) {@content;} }
+@mixin purple { @media (max-width: 767px) {@content;} }
+@mixin lightblue { @media (max-width: 480px) {@content;} }
+
+@mixin desktop { @media (min-width: $breakpoint-mobile) {@content;}}
+@mixin mobile { @media (max-width: 499px) {@content;}}
+    
+@mixin flex{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin transition{
+    -webkit-transition: all .25s;
+    -o-transition: all .25s;
+    transition: all .25s;
+}

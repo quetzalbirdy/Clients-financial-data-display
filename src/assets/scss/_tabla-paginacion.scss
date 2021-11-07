@@ -1,0 +1,32 @@
+.tabla-basica__paginacion {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    margin-left: 10px;
+    .MuiTablePagination-root {
+        width: 118px;
+        .MuiToolbar-root.MuiToolbar-regular {
+            width: 118px;
+            p {
+                &:nth-child(2) {
+                    display: none;
+                }
+                &:nth-child(4) {
+                    display: none;
+                }
+            }
+            div {
+                &:nth-child(1) {
+                    display: none;
+                } 
+                &:nth-child(3) {
+                    display: none;
+                } 
+                &:nth-child(5) {
+                    margin-left: 0;
+                } 
+            }
+        }
+    }
+}

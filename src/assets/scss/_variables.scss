@@ -1,0 +1,41 @@
+$verde: #8FCA00;
+$negro: #6C7B8A;
+
+$amarillo: #FFB979;
+$rojo: #F37972;
+
+$breakpoint-mobile: 500px;
+$gris-iconos: #C4C4C4;
+$blanco: #fff;
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;900&family=Mulish:wght@700&family=Ubuntu:wght@400;700&display=swap');
+
+$montserrat: 'Montserrat', sans-serif;
+$mulish: 'Mulish', sans-serif;
+$ubuntu: 'Ubuntu', sans-serif;
+
+// box after en grid desktop
+$barraColor: #f5f5f5;
+
+::selection {
+  color: #fff;
+  background: orange;
+}
+
+.btn{
+  border-radius: 3px;
+  font-size: 12px;
+  font-family: montserrat;
+  border-radius: 5px;
+  border:0;
+  text-transform: uppercase;
+  font-size:10px;
+  letter-spacing: 1px;
+  min-width: 250px;
+  @include flex;
+
+  &.rojo{
+    background: linear-gradient(314.33deg, #FF3F32 -3.69%, #A799C1 109.82%);
+    color:#FFF;
+  }
+}

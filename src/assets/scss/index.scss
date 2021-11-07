@@ -1,0 +1,34 @@
+@import "mixins";
+@import "variables";
+
+// menu hamburguesa
+@import "drawer";
+@import "app";
+@import 'valorTotal';
+// home
+@import "home";
+
+@import "nuevoHome";
+
+@include desktop{
+  @import "desktop";
+}
+
+/* ocultar / mostrar celdas en tablas */
+
+  // compras
+  @import "compras-sinFacturar";
+  @import "compras-pagos";
+  @import "compras-ordenesCompra";
+  @import "compras-recepcionesHes";
+
+// status de mis facturas
+  @import "factura-pendientePago";
+  @import "factura-actuales";
+  @import "factura-cuentaCorriente";
+  @import "factura-cerradas";
+  @import "factura-prontoPago";
+
+  @import "general-ordenCompra";
+  
+  @import "tabla-paginacion";

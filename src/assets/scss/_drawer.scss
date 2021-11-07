@@ -1,0 +1,104 @@
+.MuiDrawer-paper {
+    width: 80vw;
+    background: linear-gradient(70deg, #ff3f32 20%, #ffffff00);
+  
+    .drawer__top-bar {
+      height: 50px;
+  
+      .MuiButton-root {
+        min-width: 50px;
+      }
+  
+      button {
+        background: none;
+        /* position: absolute;
+        left: 0;
+        top: 0;     */
+      }
+    }
+  
+    .drawer__menu {
+      justify-content: space-between;
+      height: calc(100vh - 50px);
+  
+      .drawer__menu__grupos {
+        height: 100%;
+        overflow: scroll;
+  
+        .drawer__menu__grupo {
+          padding-left: 10px;
+          align-items: flex-start;
+  
+          .linea-horizontal {
+            height: 2px;
+            margin: 15px 25px 15px 0px;
+            background-color: rgba(255, 255, 255, 0.3);
+            flex-shrink: 0;
+            width: 100%;
+          }
+  
+          .drawer__menu__grupo__elem-titulo {
+            margin-bottom: 5px;
+            width: 70%;
+  
+            p {
+              padding-left: 10px;
+              color: $blanco;
+              font-size: 12px;
+              font-weight: 600;
+              text-transform: uppercase;
+              line-height: 140%;
+            }
+          }
+  
+          .drawer__menu__grupo__elem {
+            background: none;
+            width: 95%;
+            padding: 6px 8px;
+  
+            .MuiButton-label {
+              justify-content: flex-start;
+            }
+  
+            p {
+              color: $blanco;
+              font-size: 12px;
+              text-transform: uppercase;
+              margin-left: 30px;
+              text-align: left;
+              margin-bottom:0;
+            }
+          }
+        }
+      }
+  
+      .drawer__menu__ajustes {
+        height: 50px;
+        justify-content: space-between;
+        padding: 5px 15px;
+  
+        button {
+          background: none;
+        }
+  
+        img {
+          width: 25px;
+        }
+  
+        .drawer__menu__ajustes__usuario {
+          p {
+            &:nth-child(1) {
+              color: $blanco;
+              font-size: 14px;
+            }
+  
+            &:nth-child(2) {
+              color: $blanco;
+              font-weight: 200;
+              font-size: 12px;
+            }
+          }
+        }
+      }
+    }
+  }

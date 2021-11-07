@@ -1,0 +1,1014 @@
+:focus {
+    outline: none;
+}
+
+// sbtitulo en tablas
+.tabla-basica {
+
+    .subtitulo {
+        display: none;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-row {
+    flex-direction: row;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.mt-30 {
+    margin-top: 30px;
+}
+
+.mt-20 {
+    margin-top: 20px;
+}
+
+.mt-10 {
+    margin-top: 10px;
+}
+
+.estado-container {
+    border-radius: 12px;
+    padding: 2px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 8px;
+    color: $blanco;
+
+    width: 30px;
+    height:30px;
+    border-radius: 50%;
+    @include flex;
+
+    @include desktop{
+        
+
+    }
+}
+
+.estado-pagada,
+.estado-abierta {
+    background: #14d2b8;
+}
+
+.estado-aprobada,
+.estado-cerrada {
+    background: #d1d9de;
+}
+
+.estado-pendiente {
+    background: #f8c71c;
+}
+
+.estado-rechazada {
+    background: #ee202e;
+}
+
+.texto-rojo {
+    color: red;
+    font-weight: 600;
+}
+
+.modal-basico {
+    transform: translate(-50%, -50%);
+    background: white;
+    height: 90vh;
+    width: 90vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border: none;
+
+    @include desktop {
+        height: 60vh;
+    }
+
+    .datos-modal {
+        overflow: scroll;
+        height: calc(80vh - 95px);
+    }
+
+    .menu-modal {
+        justify-content: space-evenly;
+        padding: 5px;
+
+        .menu-modal__elem {
+            width: 30%;
+
+            &.activo {
+                .MuiButton-label {
+                    svg {
+                        color: #14D2B8;
+                    }
+                }
+            }
+
+            .MuiButton-label {
+                svg {
+                    color: #c1c1c1;
+                }
+
+                p {
+                    padding-top: 5px;
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+
+    .modal__contenido {
+        height: 100%;
+        justify-content: space-between;
+        display: flex;
+        flex-direction: column;
+
+        .MuiStepper-root {
+            padding-top: 0;
+        }
+    }
+
+    .medio-pago {
+        padding: 10px;
+        border-bottom: 3px solid rgba(108, 123, 138, 0.093);
+
+        p:nth-child(1) {
+            font-size: 14px;
+        }
+
+        p:nth-child(2) {
+            font-size: 12px;
+        }
+    }
+
+    .MuiButton-label {
+        flex-direction: column;
+    }
+
+    .MuiTableCell-root {
+        font-size: 12px;
+    }
+
+    .tabla-basica {
+        height: unset;
+        border-top: 0;
+        border-bottom: 3px solid rgba(108, 123, 138, 0.093);
+
+        th,
+        td {
+            font-size: 11px;
+        }
+
+        @include desktop {
+
+            .MuiTableRow-root:nth-child(odd) {
+                background-color: #FFF;
+            }
+        }
+    }
+
+    .monto-factura {
+        background-color: #F1F9FF;
+        padding: 10px;
+
+        p {
+            font-size: 11px;
+
+            &:nth-child(2) {
+                font-size: 14px;
+            }
+        }
+    }
+
+    .monto-inmediato {
+        padding: 20px 10px;
+        margin: 20px auto;
+        width: 200px;
+        background: #FEB969;
+        border-radius: 3px;
+
+        p {
+            font-size: 14px;
+
+            &:nth-child(2) {
+                font-size: 12px;
+            }
+        }
+    }
+
+    .modal-basico__cerrar {
+        height: 30px;
+        width: 30px;
+        margin-left: auto;
+        min-width: 30px;
+
+        svg {
+            font-size: 20px;
+            /* position: absolute;
+        right: 0px;  */
+        }
+    }
+}
+
+.MuiStepConnector-root.MuiStepConnector-vertical.MuiStepConnector-active,
+.MuiStepConnector-completed {
+    .MuiStepConnector-line {
+        border-color: #14d2b8;
+    }
+}
+
+.MuiStepConnector-vertical {
+    padding: 0 !important;
+
+    .MuiStepConnector-lineVertical {
+        min-height: 11px;
+    }
+}
+
+.MuiStepLabel-labelContainer {
+    .MuiTypography-body2 {
+        font-family: "Montserrat", sans-serif;
+        text-transform: uppercase;
+        font-size: 12px;
+    }
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    border: none;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    box-sizing: border-box;
+    line-height: 17px;
+}
+
+/* Se usa cuando la ventana contiene el componente bottom bar */
+.fondo-app.con-bottom-bar {
+    .contenido-ventana {
+        height: calc(100vh - 102px);
+    }
+}
+
+
+
+/* APP BAR */
+.app-bar {
+    height: 50px;
+    border-bottom: rgba(108, 123, 138, 0.093) 2px solid;
+    justify-content: space-between;
+
+    .MuiButton-label {
+        justify-content: flex-start;
+        padding: 0 0 0 10px;
+    }
+
+    button {
+        background: none;
+        padding: 0 0 0 5px;
+    }
+
+    .app-bar__texto-logo {
+        width: 80%;
+        justify-content: flex-end;
+
+        p {
+            font-size: 10px;
+            text-align: right;
+            margin-right: 10px;
+        }
+
+        img {
+            height: 25px;
+            padding-right: 10px;
+        }
+    }
+}
+
+/* BOTTOM BAR */
+.bottom-bar {
+    height: 50px;
+    padding: 5px 25px;
+    border-top: 3px solid rgba(108, 123, 138, 0.093);
+
+    .MuiButton-text {
+        padding: 0;
+    }
+
+    .MuiButton-label {
+        display: flex;
+        flex-direction: column;
+    }
+
+    button {
+        background: none;
+        margin: 0 10px;
+
+        svg {
+            color: $gris-iconos;
+        }
+
+        p {
+            text-transform: uppercase;
+            font-size: 10px;
+            margin-top: -4px;
+        }
+
+        &:nth-child(2),
+        &:nth-child(3) {
+            svg {
+                margin-top: 5px;
+            }
+
+            p {
+                margin-top: 0px;
+            }
+        }
+
+        &:nth-child(2) {
+
+            svg,
+            p {
+                color: #14d2b8;
+            }
+        }
+
+        &:nth-child(4) {
+            svg {
+                margin-top: 7px;
+            }
+
+            p {
+                margin-top: 3px;
+            }
+        }
+    }
+}
+
+#simple-menu {
+    .MuiMenuItem-root {
+        min-height: 40px;
+    }
+
+    ul {
+        padding: 0;
+
+        li {
+            font-size: 12px;
+            border-bottom: 1px solid #dae8f1;
+
+            &:last-child {
+                border-bottom: none;
+            }
+        }
+    }
+}
+
+/* TITULO TABLA */
+.titulo-tabla {
+    height: 50px;
+    justify-content: space-between;
+    padding: 0 10px;
+
+    h2 {
+        font-size: 15px;
+        text-transform: uppercase;
+    }
+
+    .titulo-tabla__botones {
+        button {
+            background: none;
+            text-transform: uppercase;
+            font-size: 10px;
+
+            &:nth-child(1) {
+                margin-right: 10px;
+            }
+
+            svg {
+                padding-right: 5px;
+                color: $gris-iconos;
+            }
+        }
+    }
+}
+
+
+
+/* Tabla basica */
+.tabla-basica {
+    overflow: scroll;
+    height: calc(100vh - 202px);
+    font-family: "Montserrat", sans-serif;
+    border-top: 3px solid rgba(108, 123, 138, 0.093);
+    position: relative;
+    z-index: 0;
+
+    &.MuiPaper-elevation1 {
+        box-shadow: none;
+    }
+
+    .MuiButton-text {
+        padding: 10px 0;
+    }
+
+    .MuiTableCell-stickyHeader {
+        background: $blanco;
+        color: $gris-iconos;
+        font-weight: 400;
+        font-family: "Montserrat", sans-serif;
+    }
+
+    .MuiTableRow-root:nth-child(odd) {
+        background-color: rgb(244, 244, 244);
+        background-color: #f7f7f7;
+    }
+
+    tr.MuiTableRow-root {
+        padding: 10px 0;
+
+        th {
+            line-height: 1;
+
+            &:nth-child(1) {
+                padding-left: 15px;
+            }
+        }
+
+        td {
+            &:nth-child(1) {
+                padding-left: 15px;
+            }
+
+            svg {
+                width: 23px;
+                height: 23px;
+                color:#fff;
+
+                // path{
+                //     fill:#fff;
+                // }
+
+                &:nth-child(2) {
+                    color: red;
+                    position: relative;
+                    bottom: 10px;
+                    right: 7px;
+
+                    path{
+                        fill:red;
+                    }
+                }
+            }
+
+            .MuiButton-root{
+                border-radius: 0;
+
+                svg{
+                    color:#999;
+                }
+            }
+
+            &:last-child {
+                padding-right: 10px;
+            }
+        }
+
+        th,
+        td {
+            border: 0;
+        }
+    }
+
+    th.MuiTableCell-root {
+        padding: 12px 5px;
+    }
+
+    .MuiTableCell-root {
+        font-family: "Mulish", sans-serif;
+        padding: 5px 5px;
+        font-size: 12px;
+
+        @include desktop{
+            height:50px;
+        }
+
+        button {
+            background: none;
+        }
+
+        .MuiButton-root {
+            min-width: 0;
+        }
+    }
+}
+
+/* BOTON ACCION */
+.boton-accion-centro {
+    height: 50px;
+    width: 100%;
+    border-top: 3px solid rgba(108, 123, 138, 0.093);
+
+    .MuiButton-root {
+        background: linear-gradient(314.33deg, #ff3f32 -3.69%, #a799c1 109.82%);
+        border-radius: 15px;
+        color: $blanco;
+        padding: 5px;
+        width: 70vw;
+        font-size: 10px;
+        height: 35px;
+        letter-spacing: 1px;
+    }
+}
+
+/* SELECT BASICO */
+.select-basico {
+    height: 70px;
+
+    p {
+        font-size: 12px;
+        text-transform: uppercase;
+    }
+
+    .MuiInput-underline::before {
+        border: none;
+        content: "";
+        color: transparent;
+        background: transparent;
+        transition: none;
+        border-bottom-color: transparent !important;
+    }
+
+    .MuiInput-underline::after {
+        border: none;
+        content: "";
+        color: transparent;
+        background: transparent;
+        transition: none;
+        border-bottom-color: transparent !important;
+    }
+
+    .MuiInputBase-root {
+        border-bottom-color: transparent !important;
+
+        &.MuiInput-underline {
+            border: none;
+        }
+
+        border: none;
+        margin-top: 5px;
+        background: linear-gradient(314.33deg, #e3e3e3 -3.69%, #f8f8f8 109.82%);
+        padding: 5px;
+        width: 70%;
+        text-align: center;
+        border-radius: 25px;
+
+        svg {
+            margin-right: 5px;
+        }
+    }
+
+    .MuiInputBase-input {
+        font-family: "Montserrat", sans-serif, sans-serif;
+        font-size: 15px;
+    }
+
+    .MuiSelect-select:focus {
+        background-color: transparent;
+    }
+}
+
+/* DOCUMENTO */
+.documento {
+    height: 40px;
+    border: none;
+    margin-top: 10px;
+    background: #c3c3c3;
+    padding: 0;
+    width: 70%;
+    text-align: center;
+    border-radius: 25px;
+    text-transform: uppercase;
+    font-size: 12px;
+
+    svg {
+        margin-right: 5px;
+    }
+
+    .documento-boton {
+        width: 100%;
+        height: 100%;
+        border-radius: 25px;
+
+        p {
+            font-size: 12px;
+            color: $blanco;
+        }
+
+        svg {
+            color: $blanco;
+            margin-right: 5px;
+        }
+    }
+
+    &.faltante {
+        background: linear-gradient(-10deg, #ff3f32 -3.69%, #a799c1 109.82%);
+    }
+}
+
+.boton-documento {
+    width: 70%;
+}
+
+.loading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 105px);
+    color: #ff3f32;
+    width:100%;
+    background:'rgba(255,0,0,0.3)';
+    z-index: 5000;
+    position: relative;
+
+    grid-column: 1/4;
+}
+
+/* PENDIENTE PAGO */
+.pendiente-pago {
+    .tabla-basica {
+        height: calc(100vh - 252px);
+    }
+}
+
+/* FACTURAS ACTUALES */
+.facturas-actuales {
+    .tabla-basica {
+        height: calc(100vh - 248px);
+
+        tr {
+            th {
+                p:nth-child(2) {
+                    font-size: 12px;
+                }
+            }
+
+            td:nth-child(2) {
+                p:nth-child(2) {
+                    font-size: 12px;
+                    color: $gris-iconos;
+                }
+            }
+
+            td:nth-child(3) {
+                p {
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+
+    .facturas-actuales__simbolos {
+        height: 45px;
+        justify-content: space-around;
+        padding: 5px 10px 0 10px;
+        border-top: 3px solid rgba(108, 123, 138, 0.093);
+        background: #F8F8F8;
+
+        p {
+            font-size: 10px;
+            text-transform: uppercase;
+        }
+
+        .facturas-actuales__simbolos__simbolo {
+            svg {
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                color: $blanco;
+                padding: 2px;
+            }
+
+            &:nth-child(1) {
+                svg {
+                    background: #14d2b8;
+                }
+            }
+
+            &:nth-child(2) {
+                svg {
+                    background: #f8c71c;
+                }
+            }
+
+            &:nth-child(3) {
+                svg {
+                    background: #d1d9de;
+                    padding: 4px;
+                }
+            }
+
+            &:nth-child(4) {
+                svg {
+                    color: red;
+                    width: 26px;
+                    height: 26px;
+                }
+            }
+        }
+    }
+}
+
+/* PRONTO PAGO */
+// lo movi a _factura-prontoPago.scss
+
+/* HISTORIA FACTURAS */
+
+/* Facturas cedidas */
+.facturas-cedidas {
+    .tabla-basica {
+        tr {
+            th {
+                p:nth-child(2) {
+                    font-size: 12px;
+                }
+            }
+
+            td {
+                &:nth-child(3) {
+                    p:nth-child(1) {
+                        font-weight: 600;
+                    }
+                }
+
+                p:nth-child(2) {
+                    font-size: 10px;
+                }
+            }
+        }
+    }
+}
+
+/* Cuenta corriente */
+.cuenta-corriente {
+    .tabla-basica {
+        height: calc(100vh - 272px);
+
+        tr {
+            th {
+                font-size: 12px;
+            }
+
+            td {
+                font-size: 12px;
+            }
+        }
+    }
+}
+
+/* Subir documentos */
+.subir-documentos {
+    .select-basico {
+        &:nth-child(3) {
+            margin-top: 20px;
+        }
+    }
+
+    .boton-accion-centro {
+        svg {
+            margin-right: 10px;
+        }
+    }
+}
+
+/* Ordenes Compra */
+.ordenes-compra {
+    .tabla-basica {
+        height: calc(100vh - 152px);
+
+        tr {
+            th {
+                p {
+                    &:nth-child(2) {
+                        font-size: 12px;
+                    }
+                }
+            }
+
+            td {
+                &:nth-child(2) {
+                    p {
+                        font-size: 12px;
+                    }
+                }
+
+                &:nth-child(3) {
+                    p {
+                        &:nth-child(1) {
+                            font-weight: 600;
+                        }
+                    }
+                }
+
+                p {
+                    &:nth-child(2) {
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+
+        .MuiButton-text {
+            padding: 0;
+        }
+    }
+}
+
+/* Lo que ofrezco */
+.lo-que-ofrezco {
+    .tabla-basica {
+        height: calc(100vh - 200px);
+    }
+
+    .productos-servicios {
+        text-transform: uppercase;
+
+        p:nth-child(3) {
+            color: #14d2b8;
+        }
+    }
+}
+
+/* Hoja de ruta */
+.hoja-ruta {
+    .hoja-ruta__contenedores {
+        height: calc(100vh - 152px);
+        overflow: scroll;
+    }
+
+    .hoja-ruta__container {
+        width: 95%;
+        margin: 0 auto 10px auto;
+        background: #F8F8F8;
+        border: 1px solid #D9D9D9;
+
+        .hoja-ruta__container__header {
+            padding: 10px;
+            justify-content: space-around;
+            text-align: center;
+            border-bottom: 1px solid #D9D9D9;
+
+            .hoja-ruta__container__header__item {
+                p {
+                    font-size: 10px;
+                    line-height: 12px;
+
+                    &:nth-child(1) {
+                        font-weight: 600;
+                    }
+                }
+            }
+        }
+
+        .hoja-ruta__container__body {
+            padding: 10px;
+
+            p {
+                font-size: 10px;
+                font-weight: 600;
+                text-align: center;
+            }
+
+            .hoja-ruta__container__body__documentos {
+                div {
+                    margin-bottom: 5px;
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+
+                p {
+                    text-align: left;
+                }
+
+                svg {
+                    margin: 0 5px 0px 5px;
+                    color: #14d2b8;
+                }
+            }
+        }
+    }
+}
+
+/* Pagos */
+.pagos {
+    .tabla-basica {
+        height: calc(100vh - 152px);
+
+        tr {
+            th {
+                p {
+                    &:nth-child(2) {
+                        font-size: 12px;
+                    }
+                }
+            }
+
+            td {
+                p {
+                    &:nth-child(1) {
+                        font-size: 12px;
+                    }
+
+                    &:nth-child(2) {
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* sin facturar */
+.sin-facturar {
+    tr {
+        th {
+            p {
+                &:nth-child(2) {
+                    font-size: 12px;
+                }
+            }
+        }
+
+        td {
+            &:nth-child(2) {
+                p {
+                    &:nth-child(1) {
+                        font-size: 12px;
+                    }
+                }
+            }
+
+            &:nth-child(3) {
+                p {
+                    &:nth-child(2) {
+                        font-size: 12px;
+                        font-weight: 600;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Recepciones */
+.recepciones {
+    .tabla-basica {
+        height: calc(100vh - 152px);
+
+        tr {
+            th {
+                p {
+                    &:nth-child(2) {
+                        font-size: 12px;
+                    }
+                }
+            }
+
+            td {
+                &:nth-child(2) {
+                    p {
+                        font-size: 12px;
+                    }
+                }
+
+                &:nth-child(3) {
+                    p {
+                        &:nth-child(2) {
+                            font-size: 12px;
+                            font-weight: 600;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

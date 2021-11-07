@@ -1,0 +1,246 @@
+.fondo-app {
+
+    &.historia-facturas  {
+
+        .tabla-basica {
+            height: calc(100vh - 248px);
+    
+            tr {
+    
+                td:nth-child(2) {
+                    p:nth-child(2) {
+                        font-size: 12px;
+                    }
+                }
+    
+                td:nth-child(3) {
+                    p {
+                        &:nth-child(1) {
+                            font-weight: 600;
+                        }
+    
+                        &:nth-child(2) {
+                            font-size: 12px;
+                        }
+                    }
+                }
+            }
+
+            .MuiButton-root{
+
+                .MuiButton-label{
+                    background-color: $gris-iconos;
+                    border-radius: 50%;
+                    width: 30px;
+                    height: 30px;
+                    text-align: center;
+                    padding-top: 3px;
+                    @include flex;
+
+                    p{
+                        font-weight: bold;
+                        white-space: pre;
+                        width: 11px;
+                        overflow: hidden;
+                        letter-spacing: 100px;
+                    }
+                }
+            }
+        }
+    
+        .historia-facturas__simbolos {
+            height: 45px;
+            justify-content: space-around;
+            padding: 5px 10px 0 10px;
+            border-top: 3px solid rgba(108, 123, 138, 0.093);
+            background: #F8F8F8;
+    
+            p {
+                font-size: 10px;
+                text-transform: uppercase;
+            }
+    
+            .historia-facturas__simbolos__simbolo {
+                svg {
+                    width: 20px;
+                    height: 20px;
+                    border-radius: 50%;
+                    color: $blanco;
+                    padding: 2px;
+                }
+    
+                &:nth-child(1) {
+                    svg {
+                        background: #14d2b8;
+                    }
+                }
+    
+                &:nth-child(2) {
+                    svg {
+                        background: #f8c71c;
+                    }
+                }
+    
+                &:nth-child(3) {
+                    svg {
+                        background: #d1d9de;
+                        padding: 4px;
+                    }
+                }
+    
+                &:nth-child(4) {
+                    svg {
+                        color: red;
+                        width: 26px;
+                        height: 26px;
+                    }
+                }
+            }
+        }
+
+        .MuiTableContainer-root {
+
+            thead,
+            tbody {
+
+                tr {
+
+                    th,
+                    td {
+                        display: none;
+
+                        &:nth-child(1),
+                        &:nth-child(2),
+                        &:nth-child(7),
+                        &:last-child {
+                            display: table-cell;
+                        }
+                    }
+                }
+            }
+        }
+
+        @include desktop {
+            // Recepciones/hes por facturar
+
+            .contenido-ventana {
+                display: grid;
+                grid-template-columns: 100%;
+                grid-template-columns: repeat(4, 1fr);
+                grid-template-rows: repeat(3, auto);
+
+                &:after{
+                    background-color: $barraColor;
+                    content: "";
+                    z-index: -1;
+                    grid-column: 1/5;
+                    grid-row: 3/4;
+                    border-radius: 5px;
+                }
+
+                .titulo-tabla {
+                    grid-column: 1/5;
+                    grid-row: 1/2;
+                }
+
+                .historia-facturas__simbolos {
+                    grid-column: 1/2;
+                    grid-row: 3/4;
+                    width: 100%;
+                    padding:0;
+                    @include flex;
+                    height:100%;
+                    gap:20px;
+                    border:0;
+                    background: none;
+                }
+
+                .tabla-basica {
+                    grid-column: 1/5;
+                    grid-row: 2/3;
+
+                    thead,
+                    tbody {
+        
+                        tr {
+        
+                            th,
+                            td {
+                                display: table-cell;
+        
+                                &:nth-child(2),
+                                &:nth-child(7){
+                                    display: none;
+                                }
+
+                                &:nth-child(1){
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .boton-accion-centro{
+                    grid-column: 4/5;
+                    grid-row: 3/4;
+                    height: 100%;
+                    border:0;
+
+
+                    button{
+                        width: inherit;
+                        margin:20px;
+                    }
+                }
+
+                .MuiButton-root{
+
+                    .MuiButton-label{
+                        width: auto;
+                        padding: 5px 15px;
+                        border-radius: 8px;
+    
+                        p{
+                            white-space: normal;
+                            width: auto;
+                            letter-spacing: inherit;
+                            overflow: visible;
+                            font-size: 12px;
+                            color:#FFF;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .historia-factura-modal {
+        .tabla-basica {
+            tr {
+    
+                td,
+                th {
+                    p:nth-child(1) {
+                        font-size: 14px;
+                    }
+    
+                    p:nth-child(2) {
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+    
+        .medio-pago {
+            padding: 10px;
+    
+            p:nth-child(1) {
+                font-size: 14px;
+            }
+    
+            p:nth-child(2) {
+                font-size: 12px;
+            }
+        }
+    }
+}

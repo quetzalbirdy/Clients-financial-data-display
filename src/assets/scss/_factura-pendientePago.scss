@@ -1,0 +1,103 @@
+.fondo-app {
+
+    &.pendiente-pago {
+
+        .MuiTableContainer-root {
+
+            thead,
+            tbody {
+
+                tr {
+
+                    th,
+                    td {
+                        display: none;
+
+                        &:nth-child(1),
+                        &:nth-child(2),
+                        &:nth-child(3),
+                        &:last-child {
+                            display: table-cell;
+                        }
+                    }
+                }
+            }
+        }
+
+        @media (min-width: $breakpoint-mobile) {
+            // Recepciones/hes por facturar
+
+            .contenido-ventana {
+                display: grid;
+                grid-template-columns: 100%;
+                grid-template-columns: repeat(4, 1fr);
+                grid-template-rows: repeat(3, auto);
+
+                &:after{
+                    background-color: $barraColor;
+                    content: "";
+                    z-index: -1;
+                    grid-column: 1/5;
+                    grid-row: 3/4;
+                    border-radius: 5px;
+                }
+
+                .titulo-tabla {
+                    grid-column: 1/5;
+                    grid-row: 1/2;
+                }
+
+                .valor-total {
+                    grid-column: 1/2;
+                    grid-row: 3/4;
+                    width: 100%;
+                }
+
+                .tabla-basica {
+                    grid-column: 1/5;
+                    grid-row: 2/3;
+
+                    thead,
+                    tbody {
+
+                        tr {
+
+                            th,
+                            td {
+                                display: table-cell;
+                                height: 50px;
+                                font-size: 12px;
+
+                                &:nth-child(8){
+                                    padding-left: 20px;
+                                }
+
+                                &:nth-child(8),
+                                &:nth-child(9),
+                                &:nth-child(10),
+                                &:nth-child(11),
+                                &:nth-child(12),
+                                &:nth-child(13) {
+                                    background-color: #F1F9FF;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .boton-accion-centro{
+                    grid-column: 4/5;
+                    grid-row: 3/4;
+                    height: 100%;
+                    border:0;
+
+
+                    button{
+                        width: inherit;
+                        margin:20px;
+                    }
+                }
+            }
+        }
+    }
+}

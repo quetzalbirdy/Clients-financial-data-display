@@ -1,0 +1,288 @@
+.fondo-app {
+
+    &.pronto-pago {
+
+        .MuiTableContainer-root {
+
+            thead,
+            tbody {
+
+                tr {
+
+                    th,
+                    td {
+                        display: none;
+
+                        &:nth-child(1),
+                        &:nth-child(3),
+                        &:nth-child(7),
+                        &:last-child {
+                            display: table-cell;
+                        }
+                    }
+                }
+            }
+        }
+
+        .total-financiar {
+            height: 50px;
+            background: #feb969;
+
+            p:nth-child(1) {
+                padding-right: 10px;
+            }
+
+            .valor-total{
+                background: transparent;
+
+                .text{
+                    font-size: 11px;
+                }
+
+                .valor-total__valor {
+                    background: none;
+                    font-size: 16px;
+                    font-weight: bold;
+                }
+            }
+        }
+
+        .tabla-basica {
+            height: calc(100vh - 252px);
+
+            tr {
+                th {
+                    p:nth-child(2) {
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+
+        @include desktop {
+
+            .contenido-ventana {
+                display: grid;
+                grid-template-columns: 100%;
+                grid-template-columns: repeat(4, 1fr);
+                grid-template-rows: repeat(3, auto);
+
+                &:after {
+                    background-color: $barraColor;
+                    content: "";
+                    z-index: -1;
+                    grid-column: 1/5;
+                    grid-row: 3/4;
+                    border-radius: 5px;
+                }
+
+                .titulo-tabla {
+                    grid-column: 1/5;
+                    grid-row: 1/2;
+                }
+
+                .tabla-basica {
+                    grid-column: 1/5;
+                    grid-row: 2/3;
+
+                    thead,
+                    tbody {
+
+                        tr {
+
+                            th,
+                            td {
+                                display: table-cell;
+                                height: 50px;
+                                font-size: 12px;
+
+                                &:nth-child(1) {
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .total-financiar {
+                    grid-column: 1/2;
+                    grid-row: 3/4;
+                    width: 100%;
+                    background: none;
+                    height: 100%;
+
+                    .valor-total{
+                        background: #feb969;
+                    }
+                }
+
+                .boton-accion-centro {
+                    grid-column: 4/5;
+                    grid-row: 3/4;
+                    height: 100%;
+                    border: 0;
+
+
+                    button {
+                        width: inherit;
+                        margin: 20px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.pronto-pago-modal {
+    justify-content: space-between;
+
+    .tabla-basica {
+        height: calc(100% - 265px);
+        overflow: auto;
+
+        thead,
+        tbody {
+
+            tr {
+
+                th,
+                td {
+                    display: none;
+                    line-height: 1;
+
+                    &:nth-child(1),
+                    &:nth-child(2),
+                    &:nth-child(4),
+                    &:nth-child(5) {
+                        display: table-cell;
+                    }
+
+                    @include desktop {
+                        display: table-cell;
+
+                        &:last-child {
+
+                            p {
+                                background-color: #ccc;
+                                padding: 5px;
+                                border-radius: 10px;
+                                text-align: center;
+                                text-transform: uppercase;
+                                width: auto;
+                                margin: 0 auto;
+                                font-weight: bold;
+                                font-size: 10px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .pronto-pago-modal__contenido {
+        max-height: calc(100% - 30px);
+        height: 100%;
+
+        @include desktop {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: auto 80px;
+            max-height: 100%;
+            margin: auto 0;
+            height: auto;
+
+            > *{
+                border:0;
+            }
+
+            .tabla-basica {
+                grid-column: 1/5;
+                grid-row: 1/2;
+                height: 100%;
+            }
+        }
+    }
+
+    .valor-total{
+
+        @include desktop{
+            margin: 10px 15px;
+            width: calc(100% - 30px);
+            flex-direction: column-reverse;
+        }
+    }
+
+    .condiciones-financiamiento {
+        justify-content: space-between;
+        padding: 5px 10px;
+        height: 70px;
+        border-bottom: rgba(108, 123, 138, 0.093) 2px solid;
+
+        @include desktop{
+            border:0;
+            flex-direction: row-reverse;
+
+            grid-column: 2/3;
+            grid-row: 2/3;
+            height:100%;
+        }
+
+        div {
+            width: 33.3%;
+            margin: auto;
+        }
+
+        p:nth-child(1) {
+            font-size: 14px;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+
+        p:nth-child(2) {
+            font-size: 12px;
+        }
+    }
+
+    .monto-inmediato {
+        text-align: center;
+        width: 60%;
+        height: 60px;
+        margin: 10px auto;
+        padding: 10px;
+        background: #feb969;
+        border-radius: 3px;
+
+        @include desktop{
+            margin: auto;
+        }
+
+        p:nth-child(1) {
+            font-size: 16px;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+
+        p:nth-child(2) {
+            font-size: 12px;
+        }
+    }
+
+    .pronto-pago-modal__boton{
+
+        @include desktop{
+            grid-column: 4/5;
+            grid-row: 2/3;
+            @include flex;
+
+            .boton-accion-centro{
+                border:0;
+                margin:0 20px;
+
+                .MuiButton-root {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
